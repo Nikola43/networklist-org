@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
-import coreTheme from './coreTheme';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { red } from "@material-ui/core/colors";
+import coreTheme from "./coreTheme";
 
 // Create a theme instance.
 const theme = createMuiTheme({
@@ -8,62 +8,62 @@ const theme = createMuiTheme({
   palette: {
     ...coreTheme.palette,
     background: {
-      default: '#fff',
-      paper: '#fff'
+      default: "#fff",
+      paper: "#fff",
     },
     accountButton: {
-      default: '#EFEFEF'
+      default: "#EFEFEF",
     },
     primary: {
-      main: '#2F80ED',
+      main: "#b428c1",
     },
     secondary: {
-      main: '#DEDEDE'
+      main: "#DEDEDE",
     },
-    type: 'light',
+    type: "light",
   },
   overrides: {
     ...coreTheme.overrides,
     MuiButton: {
       ...coreTheme.overrides.MuiButton,
       outlinedPrimary: {
-        border: '1px solid #EAEAEA',
+        border: "1px solid #EAEAEA",
         "&:hover": {
-          backgroundColor: '#2F80ED !important',
-          color: '#fff'
-        }
-      }
+          backgroundColor: "#b428c1 !important",
+          color: "#fff",
+        },
+      },
     },
     MuiInputBase: {
       ...coreTheme.overrides.MuiInputBase,
       root: {
-        background: "#fff"
-      }
+        background: "#fff",
+      },
     },
     MuiOutlinedInput: {
       ...coreTheme.overrides.MuiOutlinedInput,
       notchedOutline: {
-        borderColor: "#FFF"
-      }
+        borderColor: "#FFF",
+      },
     },
     MuiSnackbarContent: {
       root: {
-        color: 'rgba(0, 0, 0, 0.87)',
-        backgroundColor: '#F8F9FE',
-        padding: '0px',
-        minWidth: 'auto',
-        '@media (min-width: 960px)': {
-          minWidth: '500px',
-        }
+        color: "rgba(0, 0, 0, 0.87)",
+        backgroundColor: "#F8F9FE",
+        padding: "0px",
+        minWidth: "auto",
+        "@media (min-width: 960px)": {
+          minWidth: "500px",
+        },
       },
       message: {
-        padding: '0px'
+        padding: "0px",
       },
       action: {
-        marginRight: '0px'
-      }
+        marginRight: "0px",
+      },
     },
-  }
+  },
 });
 
 export default theme;
