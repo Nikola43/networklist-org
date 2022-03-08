@@ -124,7 +124,7 @@ function Header(props) {
     const localStorageDarkMode = window.localStorage.getItem(
       "yearn.finance-dark-mode"
     );
-    setDarkMode(localStorageDarkMode ? localStorageDarkMode === "dark" : false);
+    setDarkMode(localStorageDarkMode ? false : localStorageDarkMode === "dark");
   }, []);
 
   return (

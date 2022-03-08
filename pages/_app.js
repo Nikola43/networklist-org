@@ -1,55 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React, { useState, useEffect } from "react";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
-import SnackbarController from '../components/snackbar'
-import ShutdownNotice from '../components/shutdownNotice'
+import SnackbarController from "../components/snackbar";
+import ShutdownNotice from "../components/shutdownNotice";
 
-import stores from '../stores/index.js'
+import stores from "../stores/index.js";
 
-import {
-  CONFIGURE,
-} from '../stores/constants'
+import { CONFIGURE } from "../stores/constants";
 
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-import lightTheme from '../theme/light';
-import darkTheme from '../theme/dark';
+import lightTheme from "../theme/light";
+import darkTheme from "../theme/dark";
 
 function MyApp({ Component, pageProps }) {
-  const [ themeConfig, setThemeConfig ] = useState(lightTheme);
+  const [themeConfig, setThemeConfig] = useState(darkTheme);
 
   const changeTheme = (dark) => {
-    setThemeConfig(dark ? darkTheme : lightTheme)
-    localStorage.setItem("yearn.finance-dark-mode", dark ? "dark" : "light");
-  }
+    setThemeConfig(dark ? lightTheme : darkTheme);
+    localStorage.setItem("yearn.finance-dark-mode", dark ? "light" : "dark");
+  };
 
-  useEffect(function() {
+  useEffect(function () {
     const localStorageDarkMode = window.localStorage.getItem(
       "yearn.finance-dark-mode"
     );
-    changeTheme(localStorageDarkMode ? localStorageDarkMode === "dark" : false);
+    changeTheme(localStorageDarkMode ? false : localStorageDarkMode === "dark");
   }, []);
 
-  useEffect(function() {
-    stores.dispatcher.dispatch({ type: CONFIGURE })
-  },[]);
+  useEffect(function () {
+    stores.dispatcher.dispatch({ type: CONFIGURE });
+  }, []);
 
   const [shutdownNoticeOpen, setShutdownNoticeOpen] = useState(true);
   const closeShutdown = () => {
-    setShutdownNoticeOpen(false)
-  }
+    setShutdownNoticeOpen(false);
+  };
 
   return (
-    <ThemeProvider theme={ themeConfig }>
+    <ThemeProvider theme={themeConfig}>
       <CssBaseline />
-      <Component {...pageProps} changeTheme={ changeTheme } />
+      <Component {...pageProps} changeTheme={changeTheme} />
       <SnackbarController />
-      { shutdownNoticeOpen &&
-        <ShutdownNotice close={ closeShutdown } />
-      }
+      {shutdownNoticeOpen && <ShutdownNotice close={closeShutdown} />}
     </ThemeProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
