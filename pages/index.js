@@ -116,14 +116,14 @@ function Home({ changeTheme, theme }) {
   };
 
   const closeMultichain = (perma) => {
-    setHideMultichain("1");
-    localStorage.setItem("chainlist.org-hideMultichain", perma ? "1" : "0");
-  };
+    setHideMultichain('1')
+    localStorage.setItem('projectx-hideMultichain', perma ? '1' : '0')
+  }
 
   useEffect(() => {
-    const multi = localStorage.getItem("chainlist.org-hideMultichain");
-    if (multi) {
-      setHideMultichain(multi);
+    const multi = localStorage.getItem('projectx-hideMultichain')
+    if(multi) {
+      setHideMultichain(multi)
     } else {
       setHideMultichain("0");
     }
@@ -132,38 +132,17 @@ function Home({ changeTheme, theme }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Chainlist</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>X-Chainlist - Powered by ProjectX</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <div
-          className={
-            theme.palette.type === "dark"
-              ? classes.containerDark
-              : classes.container
-          }
-        >
-          <div className={classes.copyContainer}>
-            <div className={classes.copyCentered}>
-              <Typography variant="h1" className={classes.chainListSpacing}>
-                {/* <span className={classes.helpingUnderline}>Chainlist</span> */}
-                <Image
-                  src="/assets/logo_hi-res.png"
-                  alt="Logo"
-                  width={250}
-                  height={250}
-                />
-              </Typography>
-              <Typography variant="h2" className={classes.helpingParagraph}>
-                Helping users connect to EVM powered networks
-              </Typography>
-              <Typography className={classes.subTitle}>
-                Chainlist is a list of EVM networks. Users can use the
-                information to connect their wallets and Web3 middleware
-                providers to the appropriate Chain ID and Network ID to connect
-                to the correct chain.
-              </Typography>
+        <div className={ theme.palette.type === 'dark' ? classes.containerDark : classes.container }>
+          <div className={ classes.copyContainer }>
+            <div className={ classes.copyCentered }>
+              <Typography variant='h1' className={ classes.chainListSpacing }><span className={ classes.helpingUnderline }>X-Chainlist</span></Typography>
+              <Typography variant='h2' className={ classes.helpingParagraph }>X-Chainlist helps users connect to EVM powered networks</Typography>
+              <Typography className={classes.subTitle}>X-Chainlist is a list of EVM networks. Users can use the information to connect their DeFi  wallets and Web3 middleware providers to the appropriate Chain ID and Network ID to connect to the correct chain.<br /><br />Powered by <a href="https://projectx.financial">ProjectX</a></Typography>
               <Button
                 size="large"
                 color="primary"
@@ -176,13 +155,8 @@ function Home({ changeTheme, theme }) {
                   Add Your Network
                 </Typography>
               </Button>
-              <div className={classes.socials}>
-                <a
-                  className={`${classes.socialButton}`}
-                  href="https://github.com/antonnell/networklist-org.git"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              {/* <div className={ classes.socials }>
+                <a className={ `${classes.socialButton}` } href='https://github.com/antonnell/networklist-org.git' target='_blank' rel="noopener noreferrer" >
                   <svg version="1.1" width="24" height="24" viewBox="0 0 24 24">
                     <path
                       fill={"#b428c1"}
@@ -193,10 +167,8 @@ function Home({ changeTheme, theme }) {
                     View Source Code
                   </Typography>
                 </a>
-                <Typography variant="subtitle1" className={classes.version}>
-                  Version 1.0.7
-                </Typography>
-              </div>
+                <Typography variant='subtitle1' className={ classes.version }>Version 1.0.7</Typography>
+              </div> */}
             </div>
           </div>
           <div

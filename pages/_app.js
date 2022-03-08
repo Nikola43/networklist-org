@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
     stores.dispatcher.dispatch({ type: CONFIGURE });
   }, []);
 
-  const [shutdownNoticeOpen, setShutdownNoticeOpen] = useState(true);
+  const [shutdownNoticeOpen, setShutdownNoticeOpen] = useState(false);
   const closeShutdown = () => {
     setShutdownNoticeOpen(false);
   };

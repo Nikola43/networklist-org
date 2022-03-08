@@ -10,6 +10,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/fonts/Inter/Inter.css" />
           <link rel="stylesheet" href="/fonts/Druk/Druk.css" />
+          <meta name="description" content="Add any EVM chain to your DeFi wallet with a single click, powered by ProjectX" />
         </Head>
         <body>
           <Main />
